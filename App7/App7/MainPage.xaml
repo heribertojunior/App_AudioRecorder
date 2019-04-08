@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App7"
+             x:Class="App7.MainPage"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Listar" Clicked="Handle_Clicked_1"/>
+        <ToolbarItem Text="Teste" Clicked="Teste"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout >
+        <Label x:Name="teste_lbl"/>
+        <StackLayout  HeightRequest ="50" Orientation = "Horizontal" Padding = "10,0,0,0">
+            <Picker Title="Selecione..." 
+                SelectedIndexChanged="OnPickerSelectedIndexChanged" 
+                    HorizontalOptions="CenterAndExpand">
+                <Picker.Items>
+                    <x:String>Feliz</x:String>
+                    <x:String>Trsite</x:String>
+                    <x:String>Raiva</x:String>
+                    <x:String>Fome</x:String>
+                    <x:String>Banheiro</x:String>
+                    <x:String>Sono</x:String>
+                   
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Image Source              = "Big_microphone"  IsVisible="True"/>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Recording..." FontSize = "21" IsVisible="False" />
+                <StackLayout Orientation = "Horizontal" HorizontalOptions="Center">
+
+                    <Label x:Name="lblMinutes" Text="00" FontSize = "50" />
+                    <Label Text=":" FontSize = "50" />
+                    <Label x:Name="lblSeconds" Text="00" FontSize = "50" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="0,0,0,20">
+                    <Label Text="Detect silence:" FontSize = "21" IsVisible="False"/>
+                    <Switch x:Name="IsSilence" IsToggled = "true" IsVisible="False"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <FlexLayout JustifyContent="SpaceAround">
+            <Button x:Name="bntRecord"  BackgroundColor="#7cbb45" WidthRequest="120" Image="Small_Microphone" Clicked="Record_Clicked"/>
+            <Button x:Name="bntStop"  BackgroundColor="Silver"  WidthRequest="120" Image="Stop" Clicked="Stop_Clicked" IsEnabled= "true"/>
+            <Button x:Name="bntPlay"  BackgroundColor="Silver"  WidthRequest="120" Image="Start" Clicked="Play_Clicked" IsEnabled= "true"/>
+            <Button x:Name="btnAdd" Text = "+" BackgroundColor="Silver"  WidthRequest="120"  Clicked="Add_Clicked" IsEnabled= "true"/>
+        </FlexLayout>
+    </StackLayout>
+
+</ContentPage>

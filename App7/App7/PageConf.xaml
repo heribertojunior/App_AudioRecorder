@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App7.PageConf">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar" Clicked="Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout >
+        <Label x:Name="teste_lbl" IsVisible="False"/>
+        <StackLayout  HeightRequest ="50" Orientation = "Horizontal" Padding = "10,0,0,0">
+            <Picker Title="Selecione..." 
+                SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Feliz</x:String>
+                    <x:String>Trsite</x:String>
+                    <x:String>Raiva</x:String>
+                    <x:String>Fome</x:String>
+                    <x:String>Banheiro</x:String>
+                    <x:String>Sono</x:String>
+
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Recording..." FontSize = "21" IsVisible="False"/>
+                <StackLayout Orientation = "Horizontal">
+                    <Label x:Name="lblMinutes" Text="00" FontSize = "30" IsVisible="False"/>
+                    <Label Text=":" FontSize = "30" IsVisible="False"/>
+                    <Label x:Name="lblSeconds" Text="00" FontSize = "30" IsVisible="False"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="0,0,0,20">
+                    <Label IsVisible="False" Text="Detect silence:" FontSize = "21" />
+                    <Switch x:Name="IsSilence" IsToggled = "true" IsVisible="False"/>
+                </StackLayout>
+            </StackLayout>
+            <FlexLayout JustifyContent="SpaceAround">
+                <Button x:Name="bntRecord" BackgroundColor="#7cbb45" WidthRequest="120" Image="Small_Microphone" Clicked="Record_Clicked" IsVisible="False"/>
+                <Button x:Name="bntStop"  BackgroundColor="Silver"  WidthRequest="120" Image="Stop" Clicked="Stop_Clicked" IsEnabled= "true" IsVisible="False"/>
+                <Button x:Name="bntPlay"  BackgroundColor="Silver"  WidthRequest="120" Image="Start" Clicked="Play_Clicked" IsEnabled= "true"/>
+          
+            </FlexLayout>
+        </StackLayout>
+    
+        
+        
+    </StackLayout>
+
+</ContentPage>

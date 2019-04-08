@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App7.Consumo">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar" Clicked="Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout BackgroundColor = "#e8fbe1">
+        <Label Text="Lista de Recorder" FontSize = "21" x:Name="lbl_teste"/>
+       
+        <StackLayout Orientation="Horizontal">
+
+            <ListView x:Name="listaArquivo" SelectedItem="Handle_ItemSelected"/>
+
+        </StackLayout>
+       
+    </StackLayout>
+
+</ContentPage>
